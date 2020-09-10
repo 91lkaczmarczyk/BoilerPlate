@@ -19,15 +19,15 @@ function iloczyn($array): array
 {
     $arrayNew = [];
 
-    for ($a = 0; $a < sizeof($array); $a++) {
+    foreach ($array as $linia => $item) {
         $liczba = 1;
-        for ($b = 0; $b < sizeof($array); $b++) {
-            if ($a != $b) {
+        foreach ($array as $linia2 => $item2)  {
+            if ($linia != $linia2) {
                 if ($liczba == 1) {
-                    $arrayNew[$a] = 1;
+                    $arrayNew[$linia] = 1;
                     $liczba++;
                 }
-                $arrayNew[$a] = $arrayNew[$a] * $array[$b];
+                $arrayNew[$linia] = $arrayNew[$linia] * $array[$linia2];
             }
         }
     }

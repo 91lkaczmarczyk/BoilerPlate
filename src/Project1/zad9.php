@@ -7,18 +7,18 @@ zwróc true, ponieważ 10+7 = 17*/
 
 
 $array = [10, 15, 3, 7];
-$k = 15;
+$k = 17;
 
 echo sumTest($array,$k);
 
 
 function sumTest(array $array,int $k){
 
-    for($a = 0;$a <sizeof($array);$a++){
-        $liczba1 = $array[$a];
-        for($b = 0;$b <sizeof($array);$b++){
-            if($a != $b){
-                if(($array[$a]+$array[$b]) == $k){
+    foreach ($array as $linia => $item){
+
+        foreach ($array as $linia2 => $item2){
+            if($linia != $linia2){
+                if(($array[$linia]+$array[$linia2]) == $k){
 
                     return "true";
                 }
