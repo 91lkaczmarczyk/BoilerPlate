@@ -12,36 +12,15 @@ echo maxSum($array);
 
 function maxSum($array)
 {
-    $excl = 0;
-    $incl = $array[0];
+    $fir = 0;
+    $sec = $array[0];
     for ($i = 1; $i < sizeof($array) ;$i++)
     {
-        $temp = $incl;
-        $incl = max(max($excl + $array[$i], $array[$i]), $incl);
-        $excl = $temp;
+        $thr = $sec;
+        $sec = max(max( $fir  + $array[$i], $array[$i]), $sec);
+        $fir  = $thr;
     }
-    return $incl;
+    return $sec;
 }
 
-
-
-/*foreach ($array as $linia =>$item){
-
-    echo $linia." ".$item.PHP_EOL;
-
-    if(sizeof($array)== 3){
-
-        echo $array[0]+$array[2];
-    } else if(sizeof($array)== 4){
-
-
-    }
-
-    foreach ($array as $linia1 =>$item1){
-        if($linia != $linia1){
-            if(($linia-$linia1) >1){
-
-            }
-        }
-    }
-}*/
+?>
