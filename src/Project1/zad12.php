@@ -32,6 +32,32 @@ declare(strict_types=1);
 // wprowadzamy trzy wartości.
 
 $string = "dir\n\tsubdir1\n\t\tfile1.txt\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.txt";
+
+
+
+    $g = explode('\n',$string);
+
+
+
+
+
+function longestPath($string){
+    $r = 0;
+    $array = array(0,0);
+    $b = explode('\n',$string) ;
+    foreach ($b as $items){
+        $l = strRpos($items, '\t');
+        echo $l.PHP_EOL;
+    }
+
+
+
+}
+
+
+
+
+/*
 $string = str_replace("\n", "/", $string);
 $string = str_replace("\t", "", $string);
 $string2 = strstr($string, '.txt');
@@ -55,7 +81,7 @@ if (strlen($string1) > strlen($string2)) {
     }else {
         echo 0;
     }
-}
+}*/
 
 
 
