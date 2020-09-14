@@ -9,15 +9,37 @@ Na przykład, mając tablicę = [10, 5, 2, 7, 8, 7] i k = 3, otrzymamy: [10, 7, 
 napisać funkcje która przyjmuje 2 wartości tablie i długość i zwraca tablice*/
 $tab = [10, 5, 2, 7, 8, 7];
 $k = 3;
+$array2 = maxiTab3($tab, $k);
 
-
-
-$array2 = maxiTab2($tab,$k);
-
-foreach ($array2 as $item){
-    echo  $item.PHP_EOL;
+foreach ($array2 as $item) {
+    echo $item . PHP_EOL;
 }
-function maxiTab(array $tab, int $k):array
+function maxiTab3(array $tab, int $k): array
+{
+    $array = [];
+    for($a = 0;$a<sizeof($tab)-$k+1;$a++) {
+            $zxc = $tab;
+            $array[$a] = max(array_splice($zxc, $a, $k));
+    }
+    return $array;
+}
+/*function maxiTab3(array $tab, int $k): array
+{
+    $liczba = 0;
+    $array = [];
+    foreach ($tab as $item) {
+        if ($liczba < sizeof($tab)-$k+1) {
+            $zxc = $tab;
+            $wynik = array_splice($zxc, $liczba, $k);
+            $array[$liczba] = max($wynik);
+        }
+        $liczba++;
+    }
+    return $array;
+}*/
+
+
+/*function maxiTab(array $tab, int $k):array
 {
     $tabNew = [];
     for($a = 0;$a<sizeof($tab)-$k+1;$a++){
@@ -29,12 +51,12 @@ function maxiTab(array $tab, int $k):array
         $tabNew[$a] = max($array);
     }
 return $tabNew;
-}
-function maxiTab2(array $tab, int $k):array
+}*/
+/*function maxiTab2(array $tab, int $k):array
 {
     $tabNew = [];
     $liczba = 0;
-    $liczba2= 0;
+    $liczba2= $k;
     foreach ($tab as $item){
 
         if($liczba<$k-1){
@@ -50,7 +72,7 @@ function maxiTab2(array $tab, int $k):array
 return $tabNew;
 
 
-}
+}*/
 
 /*function maxNew(array $tab, int $k):array{
 $array = [];
