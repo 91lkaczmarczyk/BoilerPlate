@@ -17,9 +17,12 @@ foreach ($array2 as $item) {
 function maxiTab3(array $tab, int $k): array
 {
     $array = [];
-    for($a = 0;$a<sizeof($tab)-$k+1;$a++) {
+    foreach ($tab as $key => $value ) {
             $zxc = $tab;
-            $array[$a] = max(array_splice($zxc, $a, $k));
+            $array[$key] = max(array_splice($zxc, $key, $k));
+        if($key == sizeof($tab)-$k){
+            break;
+        }
     }
     return $array;
 }
