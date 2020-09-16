@@ -37,19 +37,20 @@ longestPath($string);
 
 function longestPath($string)
 {
-    $string2 = explode("\n", $string);
+    if (strpos($string, ".")){
+        $string2 = explode("\n", $string);
     $board[0] = 0;
     $stringA = '';
     $stringLong = "";
     $counter = 0;
 
     foreach ($string2 as $items) {
-        $level = strRpos($items, "\t")+1;
+        $level = strRpos($items, "\t") + 1;
         if (1 == $level) {
-            $stringA = $paste = substr($string,0,strpos($string,"\n"));
+            $stringA = $paste = substr($string, 0, strpos($string, "\n"));
         }
         if (strpos($items, ".")) {
-            $stringA = $stringA."/" . $items;
+            $stringA = $stringA . "/" . $items;
             $counter++;
             if ($counter == 0) {
                 $stringLong = $stringA;
@@ -58,12 +59,15 @@ function longestPath($string)
                 $stringLong = $stringA;
             }
         } else {
-            $stringA = $stringA ."/". $items;
+            $stringA = $stringA . "/" . $items;
         }
     }
 
     $stringLong = str_replace("\t", "", $stringLong);
-    echo "path: ".$stringLong . " length: ".strlen($stringLong);
+    echo "path: " . $stringLong . " length: " . strlen($stringLong);
+}else{
+        echo 0;
+    }
 
 }
 
