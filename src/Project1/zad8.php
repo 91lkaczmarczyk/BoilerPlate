@@ -6,9 +6,9 @@ function test(int $a) {
     // kod
 }*/
 
-test (97);
+test8(97);
 
-function test(int $a) {
+function test8(int $a) {
     $counter =0;
     if($a >1){
         for($b=1;$b<=$a;$b++){
